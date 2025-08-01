@@ -52,7 +52,7 @@ const Skills = () => {
         </div>
 
         {/* Category header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8 max-sm:items-center ">
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-r p-3 shadow-glow flex items-center justify-center">
             
             <Monitor className="text-gradient-primary" />
@@ -88,7 +88,7 @@ const Skills = () => {
           ))}
         </div>
 
-         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8 pt-12">
+         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8 pt-12 max-sm:items-center">
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-r p-3 shadow-glow flex items-center justify-center">
             
             <Server className="text-gradient-primary" />

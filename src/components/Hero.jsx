@@ -1,12 +1,8 @@
 import {
-  ExternalLink,
-  Github,
-  Instagram,
-  Linkedin,
-  Send,
-  Sparkles,
-  
   Download,
+  Loader2,   // for spinning effect
+  CheckCircle,
+  Sparkles
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
@@ -14,13 +10,28 @@ import {  SOCIAL_ICON_LINKS } from "../common/Helper";
 
 const Hero = () => {
 
+  const [downloadState, setDownloadState] = useState("idle"); // idle | downloading | done
 
-   const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/Rohit-Resume.pdf"; // file inside /public/myfile.pdf
-    link.download = "Rohit-Resume.pdf";
-    link.click();
-  };
+
+
+const handleDownload = () => {
+  setDownloadState("downloading");
+
+  const link = document.createElement("a");
+  link.href = "/Rohit-Resume.pdf";
+  link.download = "Rohit-Resume.pdf";
+  link.click();
+
+  setTimeout(() => {
+    setDownloadState("done");
+
+    // Reset icon to default after a few seconds
+    setTimeout(() => {
+      setDownloadState("idle");
+    }, 3000);
+  }, 2000); // simulate loading for 2 seconds
+};
+
   
 
 
@@ -98,10 +109,28 @@ const Hero = () => {
 
         {/* Action buttons */}
         <div className="flex  gap-6 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <button onClick={handleDownload} className="bg-gradient-to-r  px-6 py-4 rounded-[50px] gap-2 flex from-gradient-primary to-gradient-secondary hover:from-gradient-secondary hover:to-gradient-accent text-white">
-            <Download/>
-            <span>Download Resume</span>
-          </button>
+         <button
+  onClick={handleDownload}
+  className="bg-gradient-to-r px-6 py-4 rounded-[50px] gap-2 flex from-gradient-primary to-gradient-secondary hover:from-gradient-secondary hover:to-gradient-accent text-white items-center"
+>
+  {downloadState === "downloading" && (
+    <Loader2 className="animate-spin" />
+  )}
+  {downloadState === "done" && (
+    <CheckCircle className="text-white" />
+  )}
+  {downloadState === "idle" && (
+    <Download />
+  )}
+  <span>
+    {downloadState === "downloading"
+      ? "Downloading..."
+      : downloadState === "done"
+      ? "Downloaded"
+      : "Download Resume"}
+  </span>
+</button>
+
 
      
         </div>

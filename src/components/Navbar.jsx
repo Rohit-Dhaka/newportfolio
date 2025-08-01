@@ -91,13 +91,7 @@ const Navbar = () => {
                             </li>
                         </ul>
 
-                        {/* Desktop theme toggle */}
-                        <div className="hidden lg:block">
-                            <div className="relative group">
-                                <div className="absolute inset-0 bg-gradient-to-r from-gradient-primary to-gradient-secondary rounded-xl opacity-0 group-hover:opacity-20 blur-lg transition-all duration-300"></div>
-                                D
-                            </div>
-                        </div>
+                    
 
                         {/* Mobile menu button */}
                         <button
