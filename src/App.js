@@ -20,14 +20,14 @@ function App() {
    <>
    
    
-  {/* <Navbar/> */}
-  {/* <Hero/> */}
-  {/* <About/> */}
-  {/* <Skills/> */}
+  <Navbar/>
+  <Hero/>
+  <About/>
+  <Skills/>
   <Portfolio/>
-  {/* <Contact/> */}
-  {/* <Footer/> */}
-  {/*  */}
+  <Contact/>
+  <Footer/>
+  
   
    </>
   );

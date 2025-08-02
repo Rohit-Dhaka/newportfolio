@@ -36,15 +36,15 @@ const Navbar = () => {
             }`}>
             <div className="container mx-auto">
                 <div className="flex justify-between items-center py-4 max-lg:px-4 max-lg:py-3">
-                    {/* Logo */}
+                    
                                         
                    <Logo className="w-4 h-4 text-gradient-primary cursor-pointer" />
 
-                    {/* Navigation */}
+                    
                     <nav className="flex xl:gap-[40px] gap-[12px] 2xl:gap-[40px] items-center">
-                        {/* Desktop Navigation */}
-                        <ul  style={{ background: "var(--gradient-hero)" }} className={`${isMenuOpen ? "right-0" : "right-100"
-                            } flex gap-4 max-lg:absolute  max-lg:top-0  max-lg:w-full max-lg:h-screen max-lg:items-center max-lg:justify-center max-lg:flex-col duration-300 ease-linear   `}>                           
+                        
+                        <ul  className={`${isMenuOpen ? "right-0" : "right-100"
+                            } flex gap-4 max-lg:absolute  max-lg:top-0  max-lg:w-full max-lg:h-screen max-lg:items-center max-lg:justify-center max-lg:flex-col duration-300 ease-linear   backdrop-blur-xl bg-[#0f0f23]`}>                           
 
                             {NavLinks.map((link, index) => (
                                 <li
@@ -62,13 +62,13 @@ const Navbar = () => {
                                     >
                                         <span className="relative z-10">{link.name}</span>
 
-                                        {/* Hover background */}
+                                        
                                         <div className="absolute inset-0 bg-gradient-to-r from-gradient-primary/10 to-gradient-secondary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100"></div>
 
-                                        {/* Bottom border effect */}
+                                        
                                         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-gradient-primary to-gradient-secondary group-hover:w-full transition-all duration-300"></div>
 
-                                        {/* Glow effect */}
+                                        
                                         <div className="absolute inset-0 bg-gradient-to-r from-gradient-primary to-gradient-secondary rounded-lg opacity-0 group-hover:opacity-20 blur-lg transition-all duration-300"></div>
                                     </a>
                                 </li>

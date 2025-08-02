@@ -45,7 +45,7 @@ const Footer = () => {
   return (
     <footer className=" overflow-hidden">
       <div className="container ">
-        {/* Social Icons */}
+        
         <div className="flex justify-center gap-4 pt-16 pb-6">
           {socalLinks.map((socal, i) => (
             <a
@@ -62,7 +62,7 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Contact Info */}
+        
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm pb-8">
           {contactDetails.map((item, index) => (
             <div key={index} className="flex items-center gap-2">
@@ -74,7 +74,7 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Navigation Links */}
+        
         <div className="flex justify-center pb-16">
           <ul className="flex flex-wrap justify-center gap-8">
             {NavLinks.map((link, index) => (
@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
+     
       <h6 className="text-center text-sm sm:text-base font-inter border-t border-white py-4">
         © {currentYear} | All Rights Reserved
       </h6>

@@ -46,7 +46,7 @@ const Skills = () => {
   return (
     <div className="py-8 md:py-12 lg:py-16 " id="skills">
       <div className="container">
-        {/* Header */}
+        
         <div className={`text-center mb-8 sm:mb-16 `}>
           <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
             <Code2 className="w-6 h-6 sm:w-8 sm:h-8 text-gradient-primary" />
@@ -63,7 +63,7 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* Category header */}
+        
         <div className="flex flex-col xl:flex-row items-start sm:items-center gap-4 mb-8 max-sm:items-center ">
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-r p-3 shadow-glow flex items-center justify-center">
             <Monitor className="text-gradient-primary" />
@@ -80,7 +80,7 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Skills grid */}
+        
         <div className="flex flex-wrap items-center justify-center w-full gap-3 sm:gap-6">
           {skills.filter((skill) => skill.category === "frontend").map((skill, i) => (
             <div

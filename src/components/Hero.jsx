@@ -46,14 +46,14 @@ const handleDownload = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-gradient-blue to-gradient-cyan rounded-full opacity-5 blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
-      {/* Mouse follower effect */}
+    
       <div
         className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-gradient-primary to-gradient-secondary opacity-5 blur-3xl pointer-events-none transition-all duration-1000 ease-out"
        
       ></div>
 
       <div className="w-full container relative z-10 text-center lg:text-left" id="home">
-        {/* Status indicator */}
+        
         <div className="flex items-center pt-16 gap-3 mb-4 justify-center lg:justify-start animate-fade-in">
           <span className="bg-gradient-to-r from-green-400 to-emerald-500 rounded-full h-3 w-3 animate-pulse shadow-glow"></span>
           <p className="text-lg font-medium bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
@@ -62,7 +62,7 @@ const handleDownload = () => {
           <Sparkles className="w-5 h-5 text-green-400 animate-pulse" />
         </div>
 
-        {/* Main heading */}
+        
         <h3 className="block text-white text-4xl mb-3">Hey, I'm</h3>
         <div >
           <h1 className="text-7xl pb-8 lg:text-8xl font-bold sm:mb-4 heading-primary">
@@ -70,9 +70,9 @@ const handleDownload = () => {
           </h1>
         </div>
 
-        {/* Typewriter effect */}
+        
         <div className="mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-muted-foreground tracking-wider">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-muted-foreground tracking-wider">
             <Typewriter
               words={[
                 
@@ -90,7 +90,7 @@ const handleDownload = () => {
           </h2>
         </div>
 
-        {/* Social links */}
+        
         <div className="flex justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <div className="modern-card p-4 flex gap-6 items-center hover-lift">
             {SOCIAL_ICON_LINKS.map(({ id, icon: Icon, urlKey, gradient, color }) => {
@@ -108,7 +108,7 @@ const handleDownload = () => {
           </div>
         </div>
 
-        {/* Action buttons */}
+        
         <div className="flex  gap-6 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: '0.8s' }}>
          <button
   onClick={handleDownload}
@@ -139,14 +139,14 @@ const handleDownload = () => {
 
       
 
-        {/* Decorative gradient line */}
+        
         <div className="mt-12 animate-fade-in " style={{ animationDelay: '1.2s' }}>
           
           <div className="h-1 w-full bg-gradient-to-r from-transparent via-gradient-primary to-transparent rounded-full opacity-50"></div>
         </div>
       </div>
 
-      {/* Floating particles */}
+      
       <div className="particles">
         {[...Array(20)].map((_, i) => (
           <div

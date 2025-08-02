@@ -235,7 +235,7 @@ const Portfolio = () => {
       className="py-8 md:py-12 lg:py-16 relative overflow-hidden "
     >
       <div className="container relative z-10" id="myProject">
-        {/* Section header */}
+        
         <div className={`text-center mb-8 `}>
           <div className="inline-flex items-center gap-3 mb-4">
             <Folder className="w-8 h-8 text-gradient-primary" />
@@ -260,7 +260,7 @@ const Portfolio = () => {
                 i === 1 ? "flex-row-reverse" : ""
               }`}
             >
-              {/* Screen design behind */}
+              
               <div
                 className={`absolute ${
                   i === 1 ? "sm:right-[-5%]" : "sm:left-[-5%]"
@@ -269,7 +269,7 @@ const Portfolio = () => {
                 <Screen className="w-full" />
               </div>
 
-              {/* Image card */}
+              
               <div
                 className={`lg:absolute ${
                   i === 1 ? "lg:end-0" : "lg:start-0"
@@ -284,7 +284,7 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              {/* Text section */}
+              
               <div
                 className={`lg:w-7/12 md:w-6/12 px-3 flex  z-10 md:pt-0 pt-3 ${
                   i === 1 ? "md:justify-start" : "md:justify-end"
@@ -314,7 +314,7 @@ const Portfolio = () => {
                     <div className="max-sm:line-clamp-3">{pro.description}</div>
                   </div>
                   <div className="lg:pt-8 md:pt-0 pt-6 flex gap-3">
-                    {/* Live link */}
+                    
                     <div className="w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group text-white cursor-pointer">
                       <a href={pro.liveUrl}>
                         <ExternalLink className="text-black" />
@@ -324,7 +324,7 @@ const Portfolio = () => {
                       </a>
                     </div>
 
-                    {/* GitHub link */}
+
                     <div className="w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group text-white cursor-pointer">
                       <a href={pro.githubUrl}>
                         <Github className="text-black" />
@@ -338,9 +338,7 @@ const Portfolio = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/*ui gallay  */}
+        </div>        
         <div className="text-center mb-8 sm:mb-16 pt-12">
           <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
             <Eye className="w-6 h-6 sm:w-8 sm:h-8 text-gradient-primary" />
@@ -358,19 +356,19 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="pb-20 overflow-x-hidden">
+        <div className="pb-20 ">
           <Swiper
             modules={[Autoplay]}
+            slidesPerView={4}
             spaceBetween={20}
             loop={true}
-            speed={9000} // Continuous speed
-            autoplay={{
-              delay: 0, // No delay between slides
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true, // 👈 Pause on hover
-            }}
             allowTouchMove={false}
-            direction="horizontal"
+            speed={4000}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true, 
+            }}
             breakpoints={{
               0: {
                 slidesPerView: 1,
@@ -415,7 +413,6 @@ const Portfolio = () => {
                 </div>
               </SwiperSlide>
             ))}
-        
           </Swiper>
         </div>
       </div>

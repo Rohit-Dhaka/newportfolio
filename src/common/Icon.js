@@ -39,8 +39,8 @@ export const SocalDescord = () => {
   >
     <defs>
       <linearGradient id="discord-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="100%" stopColor="#6366f1" /> {/* purple-500 */}
-        <stop offset="0%" stopColor="#ec4899" /> {/* pink-500 */}
+        <stop offset="100%" stopColor="#6366f1" /> 
+        <stop offset="0%" stopColor="#ec4899" />
       </linearGradient>
     </defs>
     <path

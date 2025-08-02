@@ -7,14 +7,14 @@ const About = () => {
 
   return (
     <div id="about-section" className="py-8 md:py-12 lg:py-16 relative overflow-hidden  ">
-      {/* Background decorations */}
+      
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-gradient-primary to-gradient-secondary rounded-full opacity-5 blur-3xl"></div>
         <div className="absolute bottom-20 left-20 w-60 h-60 bg-gradient-to-r from-gradient-accent to-gradient-pink rounded-full opacity-5 blur-3xl"></div>
       </div>
 
       <div className="container relative z-10" id="about">
-        {/* Section header */}
+        
         <div className={`text-center mb-14 `}>
           <div className="inline-flex items-center gap-3 mb-6">
             <User className="w-8 h-8 text-gradient-primary" />
@@ -30,15 +30,15 @@ const About = () => {
           </p>
         </div>
 
-        {/* Main content */}
+        
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-          {/* Image section */}
+          
           <div className={`flex justify-center `}>
             <div className="relative group">
-              {/* Background glow */}
+              
               <div className="absolute inset-0 bg-gradient-to-r from-gradient-primary to-gradient-secondary rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
               
-              {/* Image container */}
+              
               <div className="relative modern-card p-8 hover-lift">
                 <div className="relative overflow-hidden rounded-xl">
                   <img
@@ -46,11 +46,11 @@ const About = () => {
                     alt="Rohit dhaka"
                     className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
-                  {/* Overlay gradient */}
+                  
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 
-                {/* Floating badge */}
+                
                 <div className="absolute -top-4 -right-4 modern-card p-3 animate-float">
                   <Heart className="w-6 h-6 text-red-500" />
                 </div>
@@ -58,7 +58,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Content section */}
+          
           <div className={`space-y-8 `} >
             <div className="space-y-6">
               <h3 className="text-3xl font-bold text-gradient">Rohit Dhaka</h3>
