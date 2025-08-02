@@ -1,6 +1,6 @@
 import {
   Download,
-  Loader2,   // for spinning effect
+  Loader2,   
   CheckCircle,
   Sparkles
 } from "lucide-react";
@@ -52,7 +52,7 @@ const handleDownload = () => {
        
       ></div>
 
-      <div className="w-full container relative z-10 text-center lg:text-left" id="Home">
+      <div className="w-full container relative z-10 text-center lg:text-left" id="home">
         {/* Status indicator */}
         <div className="flex items-center pt-16 gap-3 mb-4 justify-center lg:justify-start animate-fade-in">
           <span className="bg-gradient-to-r from-green-400 to-emerald-500 rounded-full h-3 w-3 animate-pulse shadow-glow"></span>
@@ -65,7 +65,7 @@ const handleDownload = () => {
         {/* Main heading */}
         <h3 className="block text-white text-4xl mb-3">Hey, I'm</h3>
         <div >
-          <h1 className="text-5xl md:text-7xl pb-8 lg:text-8xl font-bold mb-4 heading-primary">
+          <h1 className="text-7xl pb-8 lg:text-8xl font-bold sm:mb-4 heading-primary">
             Rohit Dhaka
           </h1>
         </div>
@@ -98,7 +98,8 @@ const handleDownload = () => {
               
 
               return (
-                <a key={id} target="_blank" rel="noopener noreferrer" className="group relative">
+                
+                <a key={id} target="_blank" rel="noopener noreferrer" className="group relative cursor-pointer">
                   <div className={`absolute inset-0 bg-gradient-to-r ${gradient} rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl`}></div>
                   <Icon className={`relative ${color} w-8 h-8 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-glow`} />
                 </a>

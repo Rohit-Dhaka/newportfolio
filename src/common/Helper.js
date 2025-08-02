@@ -1,58 +1,34 @@
-import { Instagram, Linkedin, Github, Download } from "lucide-react";
-import { Discord } from "../common/Icon";
+import {  Linkedin, Github  ,Twitter} from "lucide-react";
+
 
 export const NavLinks = [
-  { name: "Home", href: "#Home" },
-  { name: "About", href: "#About" },
-  { name: "Skills", href: "#Skills" },
-  { name: "Projects", href: "#MyProject" },
-  { name: "Contact Me", href: "#Contact" },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#myProject" },
+  { name: "Contact Me", href: "#contact" },
 ];
-export const SOCIAL_LINKS = (user) => [
-  {
-    url: user?.githubURL,
-    Icon: Github,
-    label: "GitHub",
-    color: "text-foreground",
-  },
-  {
-    url: user?.linkedInURL,
-    Icon: Linkedin,
-    label: "LinkedIn",
-    color: "text-blue-600",
-  },
-  {
-    url: user?.instagramURL,
-    Icon: Instagram,
-    label: "Instagram",
-    color: "text-pink-500",
-  },
-  {
-    url: user?.discordURL,
-    Icon: Discord,
-    label: "Discord",
-    color: "text-indigo-500",
-  },
-];
+
+
 export const SOCIAL_ICON_LINKS = [
   {
-    id: "instagram",
-    icon: Instagram,
-    urlKey: "instagramURL",
+    id: "github",
+    icon: Github,
+    urlKey: "https://github.com/Rohit-Dhaka",
     gradient: "from-pink-500 to-purple-600",
     color: "text-pink-500",
   },
   {
     id: "linkedin",
     icon: Linkedin,
-    urlKey: "linkedInURL",
+    urlKey: "https://www.linkedin.com/in/rohit-dhaka-17ba9a253/",
     gradient: "from-blue-500 to-cyan-600",
     color: "text-sky-500",
   },
   {
-    id: "discord",
-    icon: Discord,
-    urlKey: "discordURL",
+    id: "twitter",
+    icon: Twitter,
+    urlKey: "https://x.com/RohitDh02392225",
     gradient: "from-indigo-500 to-purple-600",
     color: "text-indigo-500",
   },

@@ -19,13 +19,14 @@ function App() {
   return (
    <>
    
-  <Navbar/>
-  <Hero/>
-  <About/>
-  <Skills/>
-  <Portfolio/>
+   
+  {/* <Navbar/> */}
+  {/* <Hero/> */}
+  {/* <About/> */}
+  {/* <Skills/> */}
+  {/* <Portfolio/> */}
   <Contact/>
-  <Footer/>
+  {/* <Footer/> */}
   
   
    </>

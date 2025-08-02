@@ -1,64 +1,91 @@
 import React from "react";
-import {
-  SocalDescord,
-  SocalGithub,
-  SocalInsagram,
-  SocalLindin,
-  SocalTwiter,
-} from "../common/Icon";
+import { SocalDescord } from "../common/Icon";
+import { Mail, Phone, Linkedin, Github, Twitter } from "lucide-react";
+import { NavLinks } from "../common/Helper";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socalLinks = [
-    { socalicon: <SocalInsagram />, socallink: "" },
-    { socalicon: <SocalDescord />, socallink: "https://discord.com/channels/@me" },
-    { socalicon: <SocalGithub />, socallink: "https://github.com/Rohit-Dhaka" },
-    { socalicon: <SocalLindin />, socallink: "https://www.linkedin.com/in/rohit-dhaka-17ba9a253/" },
-    { socalicon: <SocalTwiter />, socallink: "https://x.com/RohitDh02392225" },
+    // { socalicon: <Instagram  className=" text-gradient-primary" />,
+    //  socallink: "https://instagram.com" }, 
+    {
+      socalicon: <SocalDescord className="text-gradient-primary" />,
+      socallink: "https://discord.com/channels/@me",
+    },
+    {
+      socalicon: <Github className="text-gradient-primary" />,
+      socallink: "https://github.com/Rohit-Dhaka",
+    },
+    {
+      socalicon: <Linkedin className="text-gradient-primary" />,
+      socallink: "https://www.linkedin.com/in/rohit-dhaka-17ba9a253/",
+    },
+    {
+      socalicon: <Twitter className="text-gradient-primary" />,
+      socallink: "https://x.com/RohitDh02392225",
+    },
   ];
 
-  const navLinks = [
-    { linkname: "Home", navlink: "#home" },
-    { linkname: "Skills", navlink: "#skills" },
-    { linkname: "Expertise", navlink: "#expertise" },
-    { linkname: "Project", navlink: "#project" },
-    { linkname: "Contact Me", navlink: "#contact" },
+  const contactDetails = [
+    {
+      type: "Email",
+      icon: <Mail className="w-4 h-4 text-white" />,
+      href: "mailto:rohitdhaka2110@gmail.com",
+      text: "rohitdhaka2110@gmail.com",
+    },
+    {
+      type: "Phone",
+      icon: <Phone className="w-4 h-4 text-white" />,
+      href: "tel:+918295817840",
+      text: "+91 8295817840",
+    },
   ];
 
   return (
-    <footer className="overflow-hidden text-white">
-      <div className="container max-w-custom">
+    <footer className=" overflow-hidden">
+      <div className="container ">
         {/* Social Icons */}
-        <div className="flex justify-center gap-4 pt-16 pb-10">
+        <div className="flex justify-center gap-4 pt-16 pb-6">
           {socalLinks.map((socal, i) => (
             <a
               key={i}
               href={socal.socallink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 bg-white rounded-full hover:shadow-glow group flex items-center justify-center duration-300"
+              className="w-9 h-9 bg-white rounded-full group flex items-center justify-center hover:shadow-glow transition duration-300"
             >
-              <div className="group-hover:scale-110 duration-300">
+              <div className="group-hover:scale-110 transition duration-300">
                 {socal.socalicon}
               </div>
             </a>
           ))}
         </div>
 
+        {/* Contact Info */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm pb-8">
+          {contactDetails.map((item, index) => (
+            <div key={index} className="flex items-center gap-2">
+              <a href={item.href}>{item.icon}</a>
+              <a href={item.href} className="hover:underline">
+                {item.text}
+              </a>
+            </div>
+          ))}
+        </div>
+
         {/* Navigation Links */}
         <div className="flex justify-center pb-16">
-          <ul className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            {navLinks.map((nav, i) => (
-              <li key={i}>
+          <ul className="flex flex-wrap justify-center gap-8">
+            {NavLinks.map((link, index) => (
+              <li key={index} className="group relative">
                 <a
-                  href={nav.navlink}
-                  className="text-white hover:text-[#A362FF] duration-300 relative font-poppins cursor-pointer
-                  after:absolute after:bottom-0 after:left-1/2 after:translate-x-[-50%] 
-                  after:h-[2px] after:w-0 after:duration-300 after:bg-[#A362FF] 
-                  after:hover:left-0 after:hover:translate-x-0 after:hover:w-full"
+                  href={link.href}
+                  className="relative font-medium text-base transition-all duration-300 hover:text-gradient-primary focus:outline-none"
                 >
-                  {nav.linkname}
+                  <span className="relative z-10">{link.name}</span>
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-gradient-primary to-gradient-secondary group-hover:w-full transition-all duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-gradient-primary to-gradient-secondary opacity-0 group-hover:opacity-20 blur-lg transition-all duration-300 rounded-lg" />
                 </a>
               </li>
             ))}
@@ -67,7 +94,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <h6 className="text-white py-4 border-t border-white text-center font-inter">
+      <h6 className="text-center text-sm sm:text-base font-inter border-t border-white py-4">
         © {currentYear} | All Rights Reserved
       </h6>
     </footer>

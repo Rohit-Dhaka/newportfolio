@@ -13,7 +13,7 @@ const About = () => {
         <div className="absolute bottom-20 left-20 w-60 h-60 bg-gradient-to-r from-gradient-accent to-gradient-pink rounded-full opacity-5 blur-3xl"></div>
       </div>
 
-      <div className="container relative z-10" id="About">
+      <div className="container relative z-10" id="about">
         {/* Section header */}
         <div className={`text-center mb-14 `}>
           <div className="inline-flex items-center gap-3 mb-6">

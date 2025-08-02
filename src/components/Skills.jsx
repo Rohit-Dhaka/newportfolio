@@ -33,7 +33,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="py-8 md:py-12 lg:py-16 ">
+    <div   className="py-8 md:py-12 lg:py-16 " id="skills">
       <div className="container">
         {/* Header */}
         <div className={`text-center mb-8 sm:mb-16 `}>

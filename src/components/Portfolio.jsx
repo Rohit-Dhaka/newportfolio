@@ -204,7 +204,7 @@ const Portfolio = () => {
       id="portfolio-section"
       className="py-8 md:py-12 lg:py-16 relative overflow-hidden "
     >
-      <div className="container relative z-10" id="MyProject">
+      <div className="container relative z-10" id="myProject">
         {/* Section header */}
         <div className={`text-center mb-8 `}>
           <div className="inline-flex items-center gap-3 mb-4">
@@ -232,11 +232,12 @@ const Portfolio = () => {
               data-aos="zoom-in"
               data-aos-duration="1000"
             >
-              <div className="  modern-card w-full h-[340px]  rounded-md overflow-hidden relative">
+              <div className="  modern-card w-full max-lg:flex max-lg:justify-center max-lg:items-center h-[340px]  rounded-md overflow-hidden relative">
+                
                 <img
                   src={Blogimg}
                   alt=""
-                  className=" absolute bottom-0 left-[-5%] rounded-lg animate-pulse"
+                  className=" lg:absolute bottom-0 left-[-5%] rounded-lg animate-pulse"
                 />
               </div>
             </div>
