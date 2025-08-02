@@ -40,7 +40,7 @@ const About = () => {
               
               {/* Image container */}
               <div className="relative modern-card p-8 hover-lift">
-                <div className="relative overflow-hidden rounded-2xl">
+                <div className="relative overflow-hidden rounded-xl">
                   <img
                     src={Aboutimg}
                     alt="Rohit dhaka"

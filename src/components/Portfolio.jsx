@@ -10,12 +10,12 @@ import {
 } from "lucide-react";
 import { Card } from "./ui/card";
 
-
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 import Solana from "../assets/images/solana-business.webp";
 import Digiency from "../assets/images/Digiency.webp";
 import Laslesvpn from "../assets/images/Laslesvpn.webp";
@@ -46,7 +46,7 @@ import Ice from "../assets/images/Ice.webp";
 import Sclair from "../assets/images/Sclair.webp";
 import Marc from "../assets/images/Marc.webp";
 import Projectimages from "../assets/images/projects.webp";
-import { Autoplay } from "swiper/modules";
+
 import Blogimg from "../assets/images/blog.png";
 import { GithubLink, LiveLink, Screen } from "../common/Icon";
 
@@ -199,6 +199,36 @@ const Portfolio = () => {
     },
   ];
 
+  const projects = [
+    {
+      title: "Example Project",
+      label: "Featured Project",
+      description:
+        "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+      image: Blogimg,
+      liveUrl: "https://your-live-project-link.com",
+      githubUrl: "https://github.com/your-username/project-repo",
+    },
+    {
+      title: "Example Project",
+      label: "Featured Project",
+      description:
+        "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+      image: Blogimg,
+      liveUrl: "https://your-live-project-link.com",
+      githubUrl: "https://github.com/your-username/project-repo",
+    },
+    {
+      title: "Example Project",
+      label: "Featured Project",
+      description:
+        "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+      image: Blogimg,
+      liveUrl: "https://your-live-project-link.com",
+      githubUrl: "https://github.com/your-username/project-repo",
+    },
+  ];
+
   return (
     <div
       id="portfolio-section"
@@ -223,201 +253,91 @@ const Portfolio = () => {
         </div>
 
         <div className="">
-          <div className="flex flex-row flex-wrap mx-[-12px] justify-end relative pt-24 items-center ">
-            <div className=" absolute sm:left-[-5%] top-[-30%] ">
-              <Screen className="w-full" />
-            </div>
+          {projects.map((pro, i) => (
             <div
-              className=" lg:absolute lg:start-0  md:w-6/12 w-full px-3 z-10"
-              data-aos="zoom-in"
-              data-aos-duration="1000"
+              key={i}
+              className={`flex flex-row flex-wrap mx-[-12px] justify-end relative pt-24 items-center ${
+                i === 1 ? "flex-row-reverse" : ""
+              }`}
             >
-              <div className="  modern-card w-full max-lg:flex max-lg:justify-center max-lg:items-center h-[340px]  rounded-md overflow-hidden relative">
-                
-                <img
-                  src={Blogimg}
-                  alt=""
-                  className=" lg:absolute bottom-0 left-[-5%] rounded-lg animate-pulse"
-                />
+              {/* Screen design behind */}
+              <div
+                className={`absolute ${
+                  i === 1 ? "sm:right-[-5%]" : "sm:left-[-5%]"
+                } top-[-30%]`}
+              >
+                <Screen className="w-full" />
               </div>
-            </div>
-            <div className="lg:w-7/12 md:w-6/12 px-3 flex md:justify-end z-10 md:pt-0 pt-3">
-              <div className="flex flex-col md:items-end">
-                <h6 className=" font-poppins text-gradient font-semibold">
-                  Featured Project
-                </h6>
-                <h4 className=" font-poppins text-white text-[34px] font-semibold sm:pb-7 pb-4">
-                  Example Project
-                </h4>
+
+              {/* Image card */}
+              <div
+                className={`lg:absolute ${
+                  i === 1 ? "lg:end-0" : "lg:start-0"
+                } md:w-6/12 w-full px-3 z-10`}
+              >
+                <div className="modern-card sm:p-2 p-1 rounded-md">
+                  <img
+                    src={pro.image}
+                    alt=""
+                    className="rounded-lg sm:translate-x-[-8px] sm:translate-y-[8px] translate-x-[-4px] translate-y-[4px]"
+                  />
+                </div>
+              </div>
+
+              {/* Text section */}
+              <div
+                className={`lg:w-7/12 md:w-6/12 px-3 flex  z-10 md:pt-0 pt-3 ${
+                  i === 1 ? "md:justify-start" : "md:justify-end"
+                }`}
+              >
                 <div
-                  className=" rounded-[14px] bg-gradient-to-r from-[#1a1a2e] to-transparent  modern-card p-4 sm:p-6  sm:py-8 sm:px-10 px-6 py-5"
-                  data-aos="fade-right"
-                  data-aos-duration="1000"
+                  className={`flex flex-col ${
+                    i === 1
+                      ? "md:items-start text-left"
+                      : "md:items-end text-left"
+                  }`}
                 >
+                  <h6 className="font-poppins text-gradient font-semibold">
+                    {pro.label}
+                  </h6>
+                  <h4 className="font-poppins text-white text-[34px] font-semibold sm:pb-7 pb-3">
+                    {pro.title}
+                  </h4>
+
                   <div
-                    className=""
-                    data-aos="fade-left"
-                    data-aos-duration="2000"
+                    className={`rounded-[14px] bg-gradient-to-r modern-card p-4 lg:block md:hidden block ${
+                      i === 1
+                        ? "from-transparent to-[#1a1a2e]"
+                        : "from-[#1a1a2e] to-transparent"
+                    }`}
                   >
-                    A web app for visualizing personalized Spotify data. View
-                    your top artists, top tracks, recently played tracks, and
-                    detailed audio information about each track. Create and save
-                    new playlists of recommended tracks based on your existing
-                    playlists and more.
+                    <div className="max-sm:line-clamp-3">{pro.description}</div>
                   </div>
-                </div>
-                <div className="sm:pt-8 pt-6 flex gap-3">
-                  <div className=" w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group  text-white cursor-pointer">
-                    <a href="">
-                      <ExternalLink className="text-black" />
-                      <div className="absolute left-[50%] translate-x-[-50%] bottom-[-101%]  bg-white text-black rounded-sm font-poppins px-1 opacity-0 group-hover:opacity-100  text-nowrap duration-300 text-[12px]">
-                        Live Link
-                      </div>
-                    </a>
-                  </div>
-                  <div className=" w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group  text-white cursor-pointer">
-                    <a href="">
-                      {/* <GithubLink /> */}
-                      <Github className="text-black" />
+                  <div className="lg:pt-8 md:pt-0 pt-6 flex gap-3">
+                    {/* Live link */}
+                    <div className="w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group text-white cursor-pointer">
+                      <a href={pro.liveUrl}>
+                        <ExternalLink className="text-black" />
+                        <div className="absolute left-[50%] translate-x-[-50%] bottom-[-101%] bg-white text-black rounded-sm font-poppins px-1 opacity-0 group-hover:opacity-100 text-nowrap duration-300 text-[12px]">
+                          Live
+                        </div>
+                      </a>
+                    </div>
 
-                      <div className="absolute left-[50%] translate-x-[-50%] bottom-[-101%]  bg-white text-black rounded-sm font-poppins px-1 opacity-0 group-hover:opacity-100  text-nowrap duration-300 text-[12px]">
-                        GitHub
-                      </div>
-                    </a>
+                    {/* GitHub link */}
+                    <div className="w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group text-white cursor-pointer">
+                      <a href={pro.githubUrl}>
+                        <Github className="text-black" />
+                        <div className="absolute left-[50%] translate-x-[-50%] bottom-[-101%] bg-white text-black rounded-sm font-poppins px-1 opacity-0 group-hover:opacity-100 text-nowrap duration-300 text-[12px]">
+                          Github
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="flex flex-row  mx-[-12px] flex-wrap-reverse  relative pt-24 items-center ">
-            <div className="lg:w-7/12 md:w-6/12 px-3 flex md:justify-start z-10 md:pt-0 pt-3 ">
-              <div className="flex flex-col md:items-start">
-                <h6 className=" font-poppins text-gradient font-semibold">
-                  Featured Project
-                </h6>
-                <h4 className=" font-poppins text-white text-[34px] font-semibold sm:pb-7 pb-4">
-                  Example Project
-                </h4>
-                {/* <div className=" rounded-[14px] bg-gradient-to-r from-[#342F4F] to-[#2B0B3A]  text-white  sm:py-8 sm:px-10 px-6 py-5" data-aos="fade-left" data-aos-duration="1000"> */}
-                <div className="  modern-card   bg-gradient-to-r to-[#1a1a2e] from-transparent  w-full p-4 sm:p-6  ">
-                  <div
-                    className=""
-                    data-aos="fade-right"
-                    data-aos-duration="2000"
-                  >
-                    A web app for visualizing personalized Spotify data. View
-                    your top artists, top tracks, recently played tracks, and
-                    detailed audio information about each track. Create and save
-                    new playlists of recommended tracks based on your existing
-                    playlists and more.
-                  </div>
-                </div>
-
-                <div className="sm:pt-8 pt-6 flex gap-3">
-                  <div className=" w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group  text-white cursor-pointer">
-                    <a href="">
-                      <ExternalLink className="text-black" />
-                      <div className="absolute left-[50%] translate-x-[-50%] bottom-[-101%]  bg-white text-black rounded-sm font-poppins px-1 opacity-0 group-hover:opacity-100  text-nowrap duration-300 text-[12px]">
-                        Live Link
-                      </div>
-                    </a>
-                  </div>
-                  <div className=" w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group  text-white cursor-pointer">
-                    <a href="">
-                      <Github className="text-black" />
-                      <div className="absolute left-[50%] translate-x-[-50%] bottom-[-101%]  bg-white text-black rounded-sm font-poppins px-1 opacity-0 group-hover:opacity-100  text-nowrap duration-300 text-[12px]">
-                        GitHub
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className=" absolute right-0 top-[-30%] ">
-              <Screen className="w-full" />
-            </div>
-
-                <div
-              className=" lg:absolute lg:end-0  md:w-6/12 w-full px-3 z-0  "
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-            >
-              <div className="  modern-card w-full h-[340px]  rounded-md overflow-hidden relative">
-                <img
-                  src={Blogimg}
-                  alt=""
-                  className=" absolute bottom-0 left-[-5%] rounded-lg animate-pulse"
-                />
-              </div>
-            </div>
-
-           
-          </div>
-          <div className="flex flex-row flex-wrap mx-[-12px] justify-end relative pt-24 items-center ">
-            <div className=" absolute sm:left-[-5%] top-[-30%] ">
-              <Screen className="w-full" />
-            </div>
-            <div
-              className=" lg:absolute lg:start-0  md:w-6/12 w-full px-3 z-10"
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-            >
-              <div className=" w-full h-[340px]   modern-card p-4 sm:p-6  rounded-md overflow-hidden relative">
-                <img
-                  src={Blogimg}
-                  alt=""
-                  className=" absolute bottom-0 left-[-5%] rounded-lg animate-pulse"
-                />
-              </div>
-            </div>
-            <div className="lg:w-7/12 md:w-6/12 px-3 flex md:justify-end z-10 md:pt-0 pt-3">
-              <div className="flex flex-col md:items-end">
-                <h6 className=" font-poppins text-gradient font-semibold">
-                  Featured Project
-                </h6>
-                <h4 className=" font-poppins text-white text-[34px] font-semibold sm:pb-7 pb-4">
-                  Example Project
-                </h4>
-                <div
-                  className=" rounded-[14px]  bg-gradient-to-r from-[#1a1a2e] to-transparent modern-card  text-white  sm:py-8 sm:px-10 px-6 py-5"
-                  data-aos="fade-left"
-                  data-aos-duration="1000"
-                >
-                  <div
-                    className=""
-                    data-aos="fade-right"
-                    data-aos-duration="2000"
-                  >
-                    A web app for visualizing personalized Spotify data. View
-                    your top artists, top tracks, recently played tracks, and
-                    detailed audio information about each track. Create and save
-                    new playlists of recommended tracks based on your existing
-                    playlists and more.
-                  </div>
-                </div>
-
-                <div className="sm:pt-8 pt-6 flex gap-3">
-                  <div className=" w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group  text-white cursor-pointer">
-                    <a href="">
-                      <ExternalLinkIcon className="text-black" />
-                      <div className="absolute left-[50%] translate-x-[-50%] bottom-[-101%]  bg-white text-black rounded-sm font-poppins px-1 opacity-0 group-hover:opacity-100  text-nowrap duration-300 text-[12px]">
-                        Live Link
-                      </div>
-                    </a>
-                  </div>
-                  <div className=" w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group  text-white cursor-pointer">
-                    <a href="">
-                      <Github className="text-black" />
-                      <div className="absolute left-[50%] translate-x-[-50%] bottom-[-101%]  bg-white text-black rounded-sm font-poppins px-1 opacity-0 group-hover:opacity-100  text-nowrap duration-300 text-[12px]">
-                        GitHub
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/*ui gallay  */}
@@ -438,41 +358,42 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="py-20">
+        <div className="pb-20 overflow-x-hidden">
           <Swiper
             modules={[Autoplay]}
             spaceBetween={20}
-            slidesPerView={1}
             loop={true}
-            speed={9000}
+            speed={9000} // Continuous speed
             autoplay={{
-              delay: 0,
+              delay: 0, // No delay between slides
               disableOnInteraction: false,
+              pauseOnMouseEnter: true, // 👈 Pause on hover
             }}
             allowTouchMove={false}
             direction="horizontal"
             breakpoints={{
-              575: {
+              0: {
+                slidesPerView: 1,
+              },
+              640: {
                 slidesPerView: 2,
               },
-
               768: {
-                slidesPerView: 3,
+                slidesPerView: 2,
               },
-
               1024: {
-                slidesPerView: 4,
+                slidesPerView: 3,
               },
             }}
           >
             {uigallerylink.map((slide, i) => (
-              <SwiperSlide key={i}>
+              <SwiperSlide key={i} className="pt-20">
                 <div className="">
                   <a
                     href={slide.livelink}
                     target="_blank"
                     rel="noopener noreferrer"
-                  className="cursor-pointer  overflow-hidden  "
+                    className="cursor-pointer  overflow-hidden  rounded-xl "
                   >
                     <img
                       src={slide.img}
@@ -484,9 +405,9 @@ const Portfolio = () => {
                     <div className="">
                       <a
                         href={slide.livelink}
-                        className=" w-8 h-8 bg-white rounded-full flex items-center justify-center"
+                        className=" w-8 h-8  bg-gradient-primary rounded-full flex items-center justify-center"
                       >
-                        <ExternalLink className="text-black " />
+                        <ExternalLink className="text-white " />
                       </a>
                     </div>
                     {slide.alt}
@@ -494,26 +415,7 @@ const Portfolio = () => {
                 </div>
               </SwiperSlide>
             ))}
-
-            <SwiperSlide>
-              <div className=" rounded-lg  overflow-hidden text-white text-center group   h-[150px] hover:scale-[1.06] opacity-80 hover:opacity-100  duration-300 relative">
-                <a
-                  href="https://papaya-sopapillas-c561c0.netlify.app/"
-                  target="_blank"
-                  className=" cursor-pointer"
-                >
-                  <img src={Maitre} alt="Maitre" className="w-full h-full" />
-                </a>
-                <div className="absolute bottom-1 right-1 p-1 bg-white rounded-md  flex gap-1 opacity-0 group-hover:opacity-100 duration-300 ease-in">
-                  <a
-                    href="https://papaya-sopapillas-c561c0.netlify.app/"
-                    target="_blank"
-                  >
-                    <ExternalLink />
-                  </a>
-                </div>
-              </div>
-            </SwiperSlide>
+        
           </Swiper>
         </div>
       </div>

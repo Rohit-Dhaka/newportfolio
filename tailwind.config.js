@@ -83,6 +83,7 @@ module.exports = {
           cyan: "#00f2fe",
         },
       },
+      
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
