@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0  z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 overflow-hidden  z-50 transition-all duration-300 ${
         isScrolled
           ? " backdrop-blur-xl border-b border-border/50 shadow-lg"
           : "bg-transparent"
@@ -38,14 +38,7 @@ const Navbar = () => {
       <div className="container mx-auto">
         <div className="flex justify-between items-center py-4 max-lg:px-4 max-lg:py-3">
              
-  {/* <Code2/> */}
-  {/* <Flame/>
-  <Bolt/>
-  <UserCircle2/>
-  <Atom/>
-  <Infinity/>
-  <Terminal/>
-  <Layers3/> */}
+
           <Laptop className="w-8 h-8 text-gradient-primary cursor-pointer" />
           <nav className="flex xl:gap-[40px] gap-[12px] 2xl:gap-[40px] items-center">
             <ul

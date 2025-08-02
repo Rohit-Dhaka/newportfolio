@@ -52,7 +52,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="container pb-12">
+    <div id="contact" className="container overflow-hidden pb-12">
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-3 mb-6">
           <MessageCircle className="w-8 h-8 text-gradient-primary" />          

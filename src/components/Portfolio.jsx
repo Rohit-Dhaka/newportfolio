@@ -230,7 +230,7 @@ const Portfolio = () => {
 
   return (
     <div
-      id="portfolio-section"
+      
       className="py-8 md:py-12 lg:py-16 relative overflow-hidden "
     >
       <div className="container relative z-10" id="myProject">
