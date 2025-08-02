@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import './App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -13,9 +15,19 @@ import Skills from './components/Skills';
 
 function App() {
   
-    useEffect(() => {
-    document.documentElement.classList.add("dark");
-  }, []);
+useEffect(() => {
+  // Enable dark mode
+  document.documentElement.classList.add("dark");
+
+  // Initialize AOS
+  AOS.init({
+    duration: 1000,
+    once: true,
+    easing: 'ease-in-out',
+  });
+}, []);
+
+
   return (
    <>
    

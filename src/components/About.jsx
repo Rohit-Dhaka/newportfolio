@@ -40,7 +40,7 @@ const About = () => {
               
               
               <div className="relative modern-card p-8 hover-lift">
-                <div className="relative overflow-hidden rounded-xl">
+                <div className="relative overflow-hidden rounded-xl " data-aos="fade-up">
                   <img
                     src={Aboutimg}
                     alt="Rohit dhaka"
@@ -59,8 +59,8 @@ const About = () => {
           </div>
 
           
-          <div className={`space-y-8 `} >
-            <div className="space-y-6">
+          <div className={`space-y-8 `} data-aos="fade-up" >
+            <div className="space-y-6" >
               <h3 className="text-3xl font-bold text-gradient">Rohit Dhaka</h3>
               
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">

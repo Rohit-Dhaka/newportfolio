@@ -46,9 +46,8 @@ import Ice from "../assets/images/Ice.webp";
 import Sclair from "../assets/images/Sclair.webp";
 import Marc from "../assets/images/Marc.webp";
 import Projectimages from "../assets/images/projects.webp";
-
 import Blogimg from "../assets/images/blog.png";
-import { GithubLink, LiveLink, Screen } from "../common/Icon";
+import {  Screen } from "../common/Icon";
 
 const Portfolio = () => {
   const uigallerylink = [
