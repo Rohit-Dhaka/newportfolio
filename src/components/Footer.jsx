@@ -76,7 +76,7 @@ const Footer = () => {
 
         
         <div className="flex justify-center pb-16">
-          <ul className="flex flex-wrap justify-center gap-8">
+          <ul className="flex flex-wrap justify-center sm:gap-8 gap-4">
             {NavLinks.map((link, index) => (
               <li key={index} className="group relative">
                 <a
