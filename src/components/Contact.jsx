@@ -79,7 +79,7 @@ const Contact = () => {
           className="flex flex-col sm:gap-6 gap-4 sm:w-[80%]"
         >
           <div className="flex gap-4 max-sm:flex-wrap">
-            <div className="w-full text-white border py-2 px-4 rounded-lg flex gap-2">
+            <div className="w-full text-white border py-2 px-4 rounded-lg flex gap-2" data-aos="fade-right">
               <UserRound className=" text-gradient-primary" />
               <input
                 type="text"
@@ -89,7 +89,7 @@ const Contact = () => {
                 className="bg-transparent  outline-none w-full"
               />
             </div>
-            <div className="w-full text-white border py-2 px-4 rounded-lg flex gap-2">
+            <div className="w-full text-white border py-2 px-4 rounded-lg flex gap-2" data-aos="fade-left">
               <Mail className=" text-gradient-primary" />
               <input
                 type="email"
@@ -101,7 +101,7 @@ const Contact = () => {
             </div>
           </div>
 
-     <div className="text-white border py-2 px-4 rounded-lg flex gap-2">
+     <div className="text-white border py-2 px-4 rounded-lg flex gap-2" data-aos="fade-up">
            <MessageSquareText className=" text-gradient-primary" />
           <textarea
             name="message"

@@ -85,7 +85,7 @@ const Skills = () => {
           {skills.filter((skill) => skill.category === "frontend").map((skill, i) => (
             <div
               key={i}
-              className={`group modern-card flex flex-col items-center justify-center md:max-w-[172px] max-md:w-[47%] w-full max-sm:py-4  sm:p-6 hover-lift text-center `}
+              className={`group modern-card flex flex-col items-center justify-center md:max-w-[172px] max-md:w-[47%] w-full max-sm:py-4  sm:p-6 hover-lift text-center ` } data-aos="fade-up"
             >
               <div className="relative mb-3 sm:mb-4">
                 <div className="absolute inset-0 bg-gradient-to-r from-gradient-primary to-gradient-secondary rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-300"></div>
@@ -124,7 +124,7 @@ const Skills = () => {
           {skills.filter((skill) => skill.category === "backend").map((skill, i) => (
             <div
               key={i}
-              className={`group modern-card flex flex-col items-center justify-center md:max-w-[172px] max-md:w-[47%] w-full max-sm:py-4  sm:p-6 hover-lift text-center  `}
+              className={`group modern-card flex flex-col items-center justify-center md:max-w-[172px] max-md:w-[47%] w-full max-sm:py-4  sm:p-6 hover-lift text-center  `} data-aos="fade-up"
             >
               <div className="relative mb-3 sm:mb-4">
                 <div className="absolute inset-0 bg-gradient-to-r from-gradient-primary to-gradient-secondary rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-300"></div>
@@ -162,7 +162,7 @@ const Skills = () => {
           {skills.filter((skill) => skill.category === "other").map((skill, i) => (
             <div
               key={i}
-              className={`group modern-card flex flex-col items-center justify-center md:max-w-[172px] max-md:w-[47%] w-full max-sm:py-4  sm:p-6 hover-lift text-center  `}
+              className={`group modern-card flex flex-col items-center justify-center md:max-w-[172px] max-md:w-[47%] w-full max-sm:py-4  sm:p-6 hover-lift text-center  `} data-aos="fade-up"
             >
               <div className="relative mb-3 sm:mb-4">
                 <div className="absolute inset-0 bg-gradient-to-r from-gradient-primary to-gradient-secondary rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-300"></div>

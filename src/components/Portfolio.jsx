@@ -274,7 +274,7 @@ const Portfolio = () => {
                   i === 1 ? "lg:end-0" : "lg:start-0"
                 } md:w-6/12 w-full px-3 z-10`}
               >
-                <div className="modern-card sm:p-2 p-1 rounded-md">
+                <div className="modern-card sm:p-2 p-1 rounded-md"  data-aos="fade-right">
                   <img
                     src={pro.image}
                     alt=""
@@ -287,7 +287,7 @@ const Portfolio = () => {
               <div
                 className={`lg:w-7/12 md:w-6/12 px-3 flex  z-10 md:pt-0 pt-3 ${
                   i === 1 ? "md:justify-start" : "md:justify-end"
-                }`}
+                }`} data-aos="fade-left"
               >
                 <div
                   className={`flex flex-col ${
@@ -384,7 +384,7 @@ const Portfolio = () => {
             }}
           >
             {uigallerylink.map((slide, i) => (
-              <SwiperSlide key={i} className="pt-20">
+              <SwiperSlide key={i} className="pt-20" data-aos="fade-right">
                 <div className="">
                   <a
                     href={slide.livelink}
