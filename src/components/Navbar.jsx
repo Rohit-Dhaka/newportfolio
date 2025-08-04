@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 overflow-hidden  z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0   z-50 transition-all duration-300 ${
         isScrolled
           ? " backdrop-blur-xl border-b border-border/50 shadow-lg"
           : "bg-transparent"
@@ -44,7 +44,7 @@ const Navbar = () => {
             <ul
               className={`${
                 isMenuOpen ? "right-0" : "right-100"
-              } flex gap-4 max-lg:absolute  max-lg:top-0  max-lg:w-full max-lg:h-screen max-lg:items-center max-lg:justify-center max-lg:flex-col duration-300 ease-linear     backdrop-blur-md bg-blue-900/5 `}
+              } flex gap-4 max-lg:absolute  max-lg:top-0  max-lg:w-full max-lg:h-screen max-lg:items-center max-lg:justify-center max-lg:flex-col duration-300 ease-linear     max-lg:backdrop-blur-md max-lg:bg-blue-900/5 `}
             >
               {NavLinks.map((link, index) => (
                 <li
