@@ -16,10 +16,10 @@ import Skills from './components/Skills';
 function App() {
   
 useEffect(() => {
-  // Enable dark mode
+  
   document.documentElement.classList.add("dark");
 
-  // Initialize AOS
+  
   AOS.init({
     duration: 800,
     once: true,

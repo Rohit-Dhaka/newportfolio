@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { createRoutesFromChildren, Link, useNavigate } from "react-router-dom";
 import {
   Folder,
   ExternalLink,
@@ -48,6 +48,8 @@ import Marc from "../assets/images/Marc.webp";
 import Projectimages from "../assets/images/projects.webp";
 import Blogimg from "../assets/images/blog.png";
 import {  Screen } from "../common/Icon";
+
+import Blogvideo from '../assets/videos/blog.mp4';
 
 const Portfolio = () => {
   const uigallerylink = [
@@ -218,14 +220,17 @@ const Portfolio = () => {
       githubUrl: "https://github.com/your-username/project-repo",
     },
     {
-      title: "Example Project",
-      label: "Featured Project",
-      description:
-        "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      image: Blogimg,
-      liveUrl: "https://your-live-project-link.com",
-      githubUrl: "https://github.com/your-username/project-repo",
-    },
+  title: "Blog Application",
+  label: "Featured Project",
+  description:
+    "A MERN stack blog platform where admins can create, delete, and manage blog visibility, and users can read blogs, search content, and add comments. The admin dashboard allows full control over blogs and comments, while users enjoy a responsive and interactive reading experience.",
+  image: Blogimg,    
+  video: Blogvideo,  
+
+  liveUrl: "https://blogclient-liard.vercel.app/all", 
+  githubUrl: "https://github.com/your-username/blog-project",
+}
+
   ];
 
   return (
@@ -270,16 +275,20 @@ const Portfolio = () => {
 
               
               <div
-                className={`lg:absolute ${
+                className={`lg:absolute  overflow-hidden ${
                   i === 1 ? "lg:end-0" : "lg:start-0"
                 } md:w-6/12 w-full px-3 z-10`}
               >
-                <div className="modern-card sm:p-2 p-1 rounded-md"  data-aos="fade-right">
-                  <img
-                    src={pro.image}
-                    alt=""
-                    className="rounded-lg sm:translate-x-[-8px] sm:translate-y-[8px] translate-x-[-4px] translate-y-[4px]"
-                  />
+                <div className="modern-card sm:p-2   p-1  rounded-md"  data-aos="fade-right">                 
+            <video
+  src={pro.video}
+  autoPlay
+  muted
+  loop
+  controls={false}
+  className=" -translate-x-2 translate-y-2  shadow-md rounded-lg"
+/>
+
                 </div>
               </div>
 
@@ -355,16 +364,16 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="pb-20 ">
+        <div className="pb-20  ">
           <Swiper
             modules={[Autoplay]}
             slidesPerView={4}
             spaceBetween={20}
             loop={true}
-            allowTouchMove={false}
+            allowTouchMove={true}
             speed={4000}
             autoplay={{
-              delay: 0,
+              delay: 1,
               disableOnInteraction: false,
               pauseOnMouseEnter: true, 
             }}
@@ -384,7 +393,7 @@ const Portfolio = () => {
             }}
           >
             {uigallerylink.map((slide, i) => (
-              <SwiperSlide key={i} className="pt-20" data-aos="fade-right">
+              <SwiperSlide key={i} className="pt-20" >
                 <div className="">
                   <a
                     href={slide.livelink}
@@ -414,9 +423,14 @@ const Portfolio = () => {
             ))}
           </Swiper>
         </div>
-      </div>
+        </div>
+      
     </div>
   );
 };
 
 export default Portfolio;
+
+
+
+

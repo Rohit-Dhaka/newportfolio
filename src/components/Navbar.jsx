@@ -48,7 +48,7 @@ const Navbar = () => {
             >
               {NavLinks.map((link, index) => (
                 <li
-                  key={index}
+                  key={index} 
                   className="relative group max-lg:transform max-lg:translate-y-8 max-lg:opacity-0 max-lg:animate-fade-in"
                   style={{
                     animationDelay: isMenuOpen ? `${index * 0.1}s` : "0s",
@@ -96,3 +96,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
