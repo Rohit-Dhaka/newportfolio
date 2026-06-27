@@ -5,13 +5,9 @@ import {
   MessageCircle,
   ArrowRight,
   Loader2,
-  CheckCircle,
-  User,
-  UserRound,
-  UserCircle,
-  Mail,
-  
-  MessagesSquare,
+  CheckCircle,  
+  UserRound,  
+  Mail,    
   MessageSquareText,
 } from "lucide-react";
 

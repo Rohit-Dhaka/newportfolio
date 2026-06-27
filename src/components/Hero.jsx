@@ -4,7 +4,7 @@ import {
   CheckCircle,
   Sparkles
 } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import {  SOCIAL_ICON_LINKS } from "../common/Helper";
 
@@ -99,10 +99,11 @@ const handleDownload = () => {
 
               return (
                 
-                <a key={id} target="_blank" rel="noopener noreferrer" className="group relative cursor-pointer">
-                  <div className={`absolute inset-0 bg-gradient-to-r ${gradient} rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl`}></div>
-                  <Icon className={`relative ${color} w-8 h-8 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-glow`} />
-                </a>
+                  <a key={id}  href={urlKey} target="_blank" rel="noopener noreferrer" className="group relative cursor-pointer">
+                    <div className={`absolute inset-0 bg-gradient-to-r ${gradient} rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl`}></div>
+                    j
+                    <Icon className={`relative ${color} w-8 h-8 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-glow`} />
+                  </a>
               );
             })}
           </div>
