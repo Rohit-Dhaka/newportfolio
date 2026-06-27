@@ -1,14 +1,10 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { createRoutesFromChildren, Link, useNavigate } from "react-router-dom";
+import React from "react";
 import {
   Folder,
   ExternalLink,
   Eye,
-  Github,
-  ExternalLinkIcon,
+  Github,  
 } from "lucide-react";
-import { Card } from "./ui/card";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -47,7 +43,6 @@ import Gxxx from "../assets/images/Gxxx.webp";
 import Ice from "../assets/images/Ice.webp";
 import Sclair from "../assets/images/Sclair.webp";
 import Marc from "../assets/images/Marc.webp";
-import Projectimages from "../assets/images/projects.webp";
 import Blogimg from "../assets/images/blog.png";
 import {  Screen } from "../common/Icon";
 

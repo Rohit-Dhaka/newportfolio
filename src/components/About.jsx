@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { User, Heart, Code, Coffee, BookOpen, Target } from "lucide-react";
+import React from "react";
+import { User, Heart} from "lucide-react";
 import Aboutimg from '../assets/images/rohit.jpg'
 const About = () => {
  
