@@ -14,6 +14,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css";
+import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import Solana from "../assets/images/solana-business.webp";
@@ -366,20 +368,21 @@ const Portfolio = () => {
 
         <div className="pb-20  ">
           <Swiper
-            modules={[Autoplay]}
-            slidesPerView={4}
+                        
             spaceBetween={20}
-            loop={true}
-            allowTouchMove={true}
-            speed={4000}
-            autoplay={{
-              delay: 1,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true, 
-            }}
+          
+            modules={[Autoplay]}
+loop={true}
+speed={5000}
+allowTouchMove={false}
+autoplay={{
+delay:0,
+disableOnInteraction:false,
+pauseOnMouseEnter:true
+}}
             breakpoints={{
               0: {
-                slidesPerView: 1,
+                slidesPerView: 1.5,
               },
               640: {
                 slidesPerView: 2,
@@ -404,7 +407,7 @@ const Portfolio = () => {
                     <img
                       src={slide.img}
                       alt={slide.alt}
-                      className="w-full h-[170px] inline-block rounded-lg hover:scale-105  duration-300 ease-linear"
+                      className="w-full sm:h-[200px] h-[150px] object-cover inline-block rounded-lg hover:scale-105  duration-300 ease-linear"
                     />
                   </a>
                   <div className="pt-4 flex gap-2 items-center">

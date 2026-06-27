@@ -8,6 +8,7 @@ const About = () => {
   return (
     <div id="about-section" className="py-8 md:py-12 lg:py-16 relative overflow-hidden  ">
       
+      
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-r from-gradient-primary to-gradient-secondary rounded-full opacity-5 blur-3xl"></div>
         <div className="absolute bottom-20 left-20 w-60 h-60 bg-gradient-to-r from-gradient-accent to-gradient-pink rounded-full opacity-5 blur-3xl"></div>
