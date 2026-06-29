@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Folder,
   ExternalLink,
@@ -46,9 +46,17 @@ import Marc from "../assets/images/Marc.webp";
 import Blogimg from "../assets/images/blog.png";
 import {  Screen } from "../common/Icon";
 
+
 import Blogvideo from '../assets/videos/blog.mp4';
+import Ecomercevideo from '../assets/videos/E-comerce.mp4';
 
 const Portfolio = () => {
+
+
+  const [expanded, setExpanded] = useState({});
+  
+  
+
   const uigallerylink = [
     {
       livelink: "https://velvety-puppy-8357f5.netlify.app/",
@@ -199,23 +207,24 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "Example Project",
+      title: "E-Commerce Platform",
       label: "Featured Project",
       description:
-        "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+        "A full-stack MERN e-commerce application with secure JWT authentication, role-based access control, product search and filtering, shopping cart, order management, Stripe/Razorpay payment integration, and a dedicated admin dashboard for managing products, orders, and users. Built using React, Node.js, Express.js, MongoDB, and Tailwind CSS with responsive UI and RESTful APIs.",
       image: Blogimg,
-      liveUrl: "https://your-live-project-link.com",
-      githubUrl: "https://github.com/your-username/project-repo",
+      video:Ecomercevideo,
+      liveUrl: "https://newclientecommerce.vercel.app/",
+      githubUrl: "https://newecommers-eta.vercel.app/",
     },
-    {
-      title: "Example Project",
-      label: "Featured Project",
-      description:
-        "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      image: Blogimg,
-      liveUrl: "https://your-live-project-link.com",
-      githubUrl: "https://github.com/your-username/project-repo",
-    },
+    // {
+    //   title: "Example Project",
+    //   label: "Featured Project",
+    //   description:
+    //     "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+    //   image: Blogimg,
+    //   liveUrl: "https://your-live-project-link.com",
+    //   githubUrl: "https://github.com/your-username/project-repo",
+    // },
     {
   title: "Blog Application",
   label: "Featured Project",
@@ -316,12 +325,32 @@ const Portfolio = () => {
                         : "from-[#1a1a2e] to-transparent"
                     }`}
                   >
-                    <div className="max-sm:line-clamp-3">{pro.description}</div>
+                    {/* <div className="line-clamp-4">{pro.description}</div> */}
+                    <div>
+  <p className={expanded[pro._id] ? "" : "line-clamp-4"}>
+    {pro.description}
+  </p>
+
+  {pro.description.length > 150 && (
+    <button
+      onClick={() =>
+        setExpanded((prev) => ({
+          ...prev,
+          [pro._id]: !prev[pro._id],
+        }))
+      }
+      className="mt-1 text-white hover:underline font-medium"
+    >
+      {expanded[pro._id] ? "Read Less" : "Read More"}
+    </button>
+  )}
+</div>
                   </div>
                   <div className="lg:pt-8 md:pt-0 pt-6 flex gap-3">
                     
                     <div className="w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group text-white cursor-pointer">
-                      <a href={pro.liveUrl}>
+                      <a   target="_blank"
+  rel="noopener noreferrer" href={pro.liveUrl}>
                         <ExternalLink className="text-black" />
                         <div className="absolute left-[50%] translate-x-[-50%] bottom-[-101%] bg-white text-black rounded-sm font-poppins px-1 opacity-0 group-hover:opacity-100 text-nowrap duration-300 text-[12px]">
                           Live
@@ -331,7 +360,8 @@ const Portfolio = () => {
 
 
                     <div className="w-[30px] h-[30px] rounded-md bg-white flex items-center justify-center relative group text-white cursor-pointer">
-                      <a href={pro.githubUrl}>
+                      <a   target="_blank"
+  rel="noopener noreferrer" href={pro.githubUrl}>
                         <Github className="text-black" />
                         <div className="absolute left-[50%] translate-x-[-50%] bottom-[-101%] bg-white text-black rounded-sm font-poppins px-1 opacity-0 group-hover:opacity-100 text-nowrap duration-300 text-[12px]">
                           Github

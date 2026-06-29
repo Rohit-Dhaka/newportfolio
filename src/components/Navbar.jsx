@@ -41,11 +41,11 @@ const Navbar = () => {
           
           <Laptop className="w-8 h-8 text-gradient-primary cursor-pointer" />
           
-          <nav className="flex xl:gap-[40px] gap-[12px] 2xl:gap-[40px] items-center">
+          <nav className="flex xl:gap-[40px] gap-[12px] 2xl:gap-[40px] items-center ">
             <ul
               className={`${
                 isMenuOpen ? "right-0" : "right-100"
-              } flex gap-4 max-lg:absolute  max-lg:top-0  max-lg:w-full max-lg:h-screen max-lg:items-center max-lg:justify-center max-lg:flex-col duration-300 ease-linear     max-lg:backdrop-blur-md max-lg:bg-blue-900/5 `}
+              } flex gap-4 max-lg:absolute  max-lg:top-0  max-lg:w-full max-lg:h-screen max-lg:items-center max-lg:justify-center max-lg:flex-col duration-300 ease-linear   backdrop-blur-2xl `}
             >
               {NavLinks.map((link, index) => (
                 <li
